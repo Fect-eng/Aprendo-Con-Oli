@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Model.TabNabBar.AlumnoNav_Activity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar_nav"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/include"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_gravity="center"
+           android:layout_marginTop="70dp"
+           android:orientation="horizontal"
+           android:gravity="center_horizontal">
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:hint="Noti Oli"
+               android:padding="8dp"
+               android:layout_marginRight="4dp"
+               android:textColor="#FFFFFF"
+               android:background="#D62222"
+               />
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:hint="Cursos"
+               android:padding="8dp"
+               android:textColor="#FFFFFF"
+               android:background="#D62222"
+               />
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:hint="Colegio"
+               android:layout_marginLeft="4dp"
+               android:padding="8dp"
+               android:textColor="#FFFFFF"
+               android:background="#D62222"
+               />
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:hint="Horario"
+               android:padding="8dp"
+               android:layout_marginLeft="4dp"
+               android:textColor="#FFFFFF"
+               android:background="#D62222"
+               />
+
+       </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

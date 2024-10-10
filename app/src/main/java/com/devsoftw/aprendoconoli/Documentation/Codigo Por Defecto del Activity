@@ -1,0 +1,13 @@
+Este código en Java es parte del uso de ViewCompat.setOnApplyWindowInsetsListener, una función que permite gestionar cómo los insets (márgenes) de la ventana, como las barras de sistema (system bars) en dispositivos móviles, afectan a una vista específica en Android.
+
+findViewById(R.id.main) obtiene la vista principal (main) de la interfaz de usuario.
+setOnApplyWindowInsetsListener establece un listener que se activa cuando se aplican los insets de la ventana.
+La función lambda (v, insets) -> { ... } define cómo se manejarán los insets aplicados:
+insets.getInsets(WindowInsetsCompat.Type.systemBars()) obtiene los márgenes específicos de las barras de sistema.
+v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom) ajusta el padding de la vista (v) para acomodar estos márgenes.
+
+ ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
