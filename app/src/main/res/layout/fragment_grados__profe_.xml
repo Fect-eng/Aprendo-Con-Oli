@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
+    android:gravity="center"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Controller.Fragment_Profe1.Grados_Profe_Fragment">
+
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <!-- ImageView 1 -->
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="-4dp"
+            android:src="@drawable/gardoprofe"
+            android:contentDescription="Imagen 1" />
+
+        <!-- ImageView 2 -->
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/rrpr"
+            android:contentDescription="Imagen 2" />
+
+        <!-- ImageView 3 -->
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/profe2"
+            android:contentDescription="Imagen 3" />
+
+        <!-- ImageView 4 -->
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+
+            android:src="@drawable/profe3"
+            android:contentDescription="Imagen 4" />
+
+        <!-- ImageView 5 -->
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+
+            android:src="@drawable/profe4"
+            android:contentDescription="Imagen 5" />
+
+        <!-- ImageView 6 -->
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+
+            android:src="@drawable/profe5"
+            android:contentDescription="Imagen 6" />
+
+        <!-- ImageView 7 -->
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+
+            android:src="@drawable/profe6"
+            android:contentDescription="Imagen 7" />
+
+    </LinearLayout>
+</LinearLayout>

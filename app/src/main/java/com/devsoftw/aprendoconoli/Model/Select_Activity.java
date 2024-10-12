@@ -13,9 +13,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.devsoftw.aprendoconoli.View.Login_Colegio.Student.Login_Basic_Activity;
 import com.devsoftw.aprendoconoli.R;
-import com.devsoftw.aprendoconoli.View.Student.Login_Student;
-import com.devsoftw.aprendoconoli.View.Profesor.Profesor_Colegio;
+import com.devsoftw.aprendoconoli.View.Login_Colegio.Profesor.Profesor_Colegio;
 
 public class Select_Activity extends AppCompatActivity {
 
@@ -90,14 +90,14 @@ public class Select_Activity extends AppCompatActivity {
     }
 
     private void ImageviewLog_Alumno_Metodo() {
-        Intent intent = new Intent(Select_Activity.this, Login_Student.class);
+        Intent intent = new Intent(Select_Activity.this, Login_Basic_Activity.class);   // Login_Student
         Toast.makeText(this, "Bienvenido Estudiante", Toast.LENGTH_SHORT).show();
         startActivity(intent);
         finish();
     }
 
     private void Btn_Alumno_Metodo() {
-        Intent intent = new Intent(Select_Activity.this, Login_Student.class);
+        Intent intent = new Intent(Select_Activity.this, Login_Basic_Activity.class);
         Toast.makeText(this, "Bienvenido Estudiante", Toast.LENGTH_SHORT).show();
         startActivity(intent);
         finish();

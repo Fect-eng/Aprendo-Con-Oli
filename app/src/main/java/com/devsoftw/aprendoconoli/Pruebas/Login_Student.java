@@ -1,4 +1,4 @@
-package com.devsoftw.aprendoconoli.View.Student;
+package com.devsoftw.aprendoconoli.Pruebas;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -13,6 +13,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -26,11 +27,20 @@ import androidx.core.view.WindowInsetsCompat;
 import com.devsoftw.aprendoconoli.MainActivity;
 import com.devsoftw.aprendoconoli.Model.TabNabBar.AlumnoNav_Activity;
 import com.devsoftw.aprendoconoli.R;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class Login_Student extends AppCompatActivity {
 
     Toolbar toolbar;
     Button btn_loginAuth;
+
+     TextInputEditText usuario_input_layout;
+     TextInputEditText password_input_layout;
+    private TextView textViewMessage;
+
+    // Credenciales de ejemplo
+    private static final String VALID_USER = "user1";
+    private static final String VALID_PASSWORD = "password1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +66,16 @@ public class Login_Student extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true); // Muestra la flecha de navegación
             actionBar.setHomeAsUpIndicator(R.drawable.baseline_arrow_back_24); // Icono personalizado si lo deseas
         }
+
+        // Referencias a los elementos del layout
+        // TODO: 11/10/2024  
+        usuario_input_layout = findViewById(R.id.usuario_input_layout);
+        password_input_layout = findViewById(R.id.password_input_layout);
+        Button buttonLogin = findViewById(R.id.buttonLogin);
+        textViewMessage = findViewById(R.id.textViewMessage);
+
+        // Configurar el botón de inicio de sesión
+        buttonLogin.setOnClickListener(v -> validateLogin());
 
         /**
          *
@@ -105,6 +125,25 @@ public class Login_Student extends AppCompatActivity {
             }
         });
     } // TODO: 9/10/2024  Fin de Codigo onCreate
+
+
+    private void validateLogin() {
+        String userId = usuario_input_layout.getText().toString().trim();
+        String password = password_input_layout.getText().toString().trim();
+
+        // Validar las credenciales
+        if (userId.equals(VALID_USER) && password.equals(VALID_PASSWORD)) {
+            // Si las credenciales son correctas, iniciar MainActivity
+            Intent intent = new Intent(Login_Student.this, MainActivity.class);
+            startActivity(intent);
+            finish(); // Cerrar LoginActivity
+        } else {
+            // Si las credenciales no son válidas, mostrar mensaje de error
+            textViewMessage.setText("Usuario no validado");
+            textViewMessage.setVisibility(View.VISIBLE);
+        }
+    }
+
 
     private void AccionPresionButton() {
         // TODO: 6/10/2024 --------- Accion De Boton cuando se presiona 

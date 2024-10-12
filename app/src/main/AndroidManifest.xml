@@ -13,16 +13,31 @@
         android:theme="@style/Theme.APRENDOCONOLI"
         tools:targetApi="31">
         <activity
+            android:name=".View.Opt_Nav_Profesor.Contenedor_Profe1_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".View.Login_Colegio.Student.Login_Basic_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".View.Opt_Nav_Alumno.Cont_Alumno1_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Fragments.Nav_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Pruebas.NavTab_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Model.TabNabBar.AlumnoNav_Activity"
             android:exported="false" />
         <activity
-            android:name=".View.Profesor.Profesor_Colegio"
+            android:name=".View.Login_Colegio.Profesor.Profesor_Colegio"
             android:exported="false" />
         <activity
             android:name=".Pruebas.Toolbar_spru_Activity"
             android:exported="false" />
         <activity
-            android:name=".View.Student.Login_Student"
+            android:name=".Pruebas.Login_Student"
             android:exported="false" />
         <activity
             android:name=".Model.Select_Activity"

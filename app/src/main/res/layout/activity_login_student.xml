@@ -5,9 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#858282"
-    android:backgroundTint="#858282"
-    tools:context=".View.Student.Login_Student">
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
+    tools:context=".Pruebas.Login_Student">
 
     <include
         android:id="@+id/include2"
@@ -31,14 +31,16 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="13dp"
-                    android:src="@drawable/sacooliveiros"/>
+                    android:layout_height="120dp"
+                    android:layout_marginTop="60dp"
+                    android:src="@drawable/sacof"
+                    />
+
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
-                android:layout_marginTop="-30dp"
+                android:layout_marginTop="30dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/alumno"/>
 
@@ -58,7 +60,7 @@
                 android:id="@+id/txtVisualizador"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
+
                 android:textAlignment="center"
                 android:textColor="#100404"
                 android:textSize="20sp"
@@ -72,6 +74,7 @@
 
                 <!-- Usuario -->
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/usuario_input_layout"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:hint="USUARIO"
@@ -79,46 +82,51 @@
                     android:padding="10dp"
                     app:boxBackgroundMode="outline"
                     app:boxStrokeColor="@android:color/black"
-                app:boxStrokeWidth="2dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/password_input_layout"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintVertical_bias="0.5">
+                    app:boxStrokeWidth="2dp">
 
-                <com.google.android.material.textfield.TextInputEditText
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@android:color/black"
+                        android:textAlignment="viewStart" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Contraseña -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/password_input_layout"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="CONTRASEÑA"
+                    android:gravity="center_horizontal"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@android:color/black"
+                    android:padding="10dp"
+                    app:boxStrokeWidth="2dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:textColor="@android:color/black"
+                        android:textAlignment="viewStart" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/buttonLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textColor="@android:color/black"
-                    android:textAlignment="viewStart" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:text="Iniciar Sesión" />
 
-            <!-- Contraseña -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/password_input_layout"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:hint="CONTRASEÑA"
-                android:gravity="center_horizontal"
-                app:boxBackgroundMode="outline"
-                app:boxStrokeColor="@android:color/black"
-                android:padding="10dp"
-            app:boxStrokeWidth="2dp"
-            app:layout_constraintTop_toBottomOf="@id/password_input_layout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0.5"> <!-- Centrando verticalmente -->
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:textColor="@android:color/black"
-                android:textAlignment="viewStart" />  <!-- Texto alineado a la izquierda -->
-        </com.google.android.material.textfield.TextInputLayout>
-
+                <TextView
+                    android:id="@+id/textViewMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:visibility="gone" /> <!-- Oculto inicialmente -->
             </LinearLayout>
+
 
             <Button
                 android:id="@+id/btn_loginAuth"

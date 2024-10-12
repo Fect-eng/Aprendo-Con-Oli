@@ -14,9 +14,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.devsoftw.aprendoconoli.Model.Select_Activity;
-import com.devsoftw.aprendoconoli.Model.TabNabBar.AlumnoNav_Activity;
-import com.devsoftw.aprendoconoli.Pruebas.Toolbar_spru_Activity;
-import com.devsoftw.aprendoconoli.View.Student.Login_Student;
+import com.devsoftw.aprendoconoli.View.Opt_Nav_Alumno.Cont_Alumno1_Activity;
+import com.devsoftw.aprendoconoli.View.Opt_Nav_Profesor.Contenedor_Profe1_Activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
                 imageView.setVisibility(View.INVISIBLE); // Ocultar la imagen
                 txtAprendo.setVisibility(View.INVISIBLE);
-                Intent intent = new Intent(MainActivity.this, Select_Activity.class);
+                Intent intent = new Intent(MainActivity.this, Contenedor_Profe1_Activity.class);
                 startActivity(intent);
                 finish();
                 // Finalizar el MainActivity para que no se pueda volver atrás, es para las opciones de flecha de 3 opciones
