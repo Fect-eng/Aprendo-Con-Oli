@@ -12,6 +12,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.devsoftw.aprendoconoli.MainActivity;
 import com.devsoftw.aprendoconoli.Model.Select_Activity;
 import com.devsoftw.aprendoconoli.R;
 import com.devsoftw.aprendoconoli.View.Opt_Nav_Alumno.Cont_Alumno1_Activity;
@@ -27,8 +28,8 @@ public class Login_Basic_Activity extends AppCompatActivity {
     Toolbar toolbar;
 
     // Credenciales de ejemplo
-    private static final String VALID_USER = "Nsuarez";
-    private static final String VALID_PASSWORD = "Olisuarez";
+    private static final String VALID_USER = "Nsuarez";    // Nsuarez
+    private static final String VALID_PASSWORD = "Olisuarez";  // Olisuarez
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +45,16 @@ public class Login_Basic_Activity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         toolbar.setBackgroundColor(Color.parseColor("#FFFFFF")); //color general de app
-        getSupportActionBar().setTitle("NILO LUIS");
+        getSupportActionBar().setTitle("");
 
-        // Habilitar la flecha de navegación (opcional)
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        /**
+         *  // Habilitar la flecha de navegación (opcional)
+         *         ActionBar actionBar = getSupportActionBar();
+         *         if (actionBar != null) {
+         *             actionBar.setDisplayHomeAsUpEnabled(true);
+         *         }
+         */
+
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,5 +100,16 @@ public class Login_Basic_Activity extends AppCompatActivity {
             textViewMessage.setText("Usuario no validado");
             textViewMessage.setVisibility(View.VISIBLE);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Crear un Intent para redirigir a una actividad predeterminada
+        super.onBackPressed();
+        Intent intent = new Intent(this, Select_Activity.class); // Reemplaza con tu actividad destino
+        startActivity(intent);
+
+        // Opcional: Cierra la actividad actual
+        finish();
     }
 }

@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
                 imageView.setVisibility(View.INVISIBLE); // Ocultar la imagen
                 txtAprendo.setVisibility(View.INVISIBLE);
-                Intent intent = new Intent(MainActivity.this, Contenedor_Profe1_Activity.class);
+                Intent intent = new Intent(MainActivity.this, Select_Activity.class);
                 startActivity(intent);
                 finish();
                 // Finalizar el MainActivity para que no se pueda volver atrás, es para las opciones de flecha de 3 opciones

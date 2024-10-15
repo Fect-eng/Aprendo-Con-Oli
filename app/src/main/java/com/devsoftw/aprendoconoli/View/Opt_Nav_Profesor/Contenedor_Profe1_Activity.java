@@ -1,6 +1,7 @@
 package com.devsoftw.aprendoconoli.View.Opt_Nav_Profesor;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
@@ -36,7 +38,10 @@ import com.devsoftw.aprendoconoli.Controller.Fragment_Profe1.Colegio_Prof_Fragme
 import com.devsoftw.aprendoconoli.Controller.Fragment_Profe1.Grados_Profe_Fragment;
 import com.devsoftw.aprendoconoli.Controller.Fragment_Profe1.Horario_Prof_Fragment;
 import com.devsoftw.aprendoconoli.Controller.Fragment_Profe1.Notioli_Prof_Fragment;
+import com.devsoftw.aprendoconoli.Model.Select_Activity;
 import com.devsoftw.aprendoconoli.R;
+import com.devsoftw.aprendoconoli.View.Login_Colegio.Profesor.Profesor_Colegio;
+import com.devsoftw.aprendoconoli.View.Login_Colegio.Student.Login_Basic_Activity;
 import com.devsoftw.aprendoconoli.View.Opt_Nav_Alumno.Cont_Alumno1_Activity;
 import com.google.android.material.tabs.TabLayout;
 
@@ -121,6 +126,9 @@ public class Contenedor_Profe1_Activity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }
+
+    // TODO: 13/10/2024
+
 
     /**
      * Codigo Toolbar con imagen
@@ -212,4 +220,33 @@ public class Contenedor_Profe1_Activity extends AppCompatActivity {
             }
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        // Eliminar la llamada a super.onBackPressed() para evitar el cierre inmediato de la app
+
+        // Crear y mostrar un AlertDialog
+
+        new AlertDialog.Builder(this)
+                .setTitle("Retroceder a Login Profesor")
+                .setMessage("¿Estás seguro de que quieres salir de la la Pantalla Actual?")
+                .setPositiveButton("Sí", (dialog, which) -> {
+                    // Si el usuario selecciona "Sí", redirigir a la actividad de login profesor
+                    Intent intent = new Intent(this, Select_Activity.class); // Reemplaza con tu actividad destino
+                    startActivity(intent);
+                    // Opcional: Si quieres que la actividad actual se cierre
+                    finish();
+                })
+                .setNegativeButton("No", (dialog, which) -> {
+                    // Si el usuario selecciona "No", no hacer nada y cerrar el diálogo
+                    dialog.dismiss();
+                })
+                .show();
+
+        // super.onBackPressed();
+    }
+
+    // TODO: 13/10/2024  /**
+
+
 }

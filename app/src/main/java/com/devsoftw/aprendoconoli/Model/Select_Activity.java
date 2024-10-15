@@ -13,6 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.devsoftw.aprendoconoli.MainActivity;
 import com.devsoftw.aprendoconoli.View.Login_Colegio.Student.Login_Basic_Activity;
 import com.devsoftw.aprendoconoli.R;
 import com.devsoftw.aprendoconoli.View.Login_Colegio.Profesor.Profesor_Colegio;
@@ -102,4 +103,17 @@ public class Select_Activity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    /**
+     *  @Override
+     *     public void onBackPressed() {
+     *         // Crear un Intent para redirigir a una actividad predeterminada
+     *         super.onBackPressed();
+     *         Intent intent = new Intent(this, MainActivity.class); // Reemplaza con tu actividad destino
+     *         startActivity(intent);
+     *
+     *         // Opcional: Cierra la actividad actual
+     *         finish();
+     *     }
+     */
 }

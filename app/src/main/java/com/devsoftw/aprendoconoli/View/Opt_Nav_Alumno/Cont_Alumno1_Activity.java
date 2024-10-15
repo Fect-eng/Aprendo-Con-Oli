@@ -17,6 +17,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
@@ -38,6 +39,8 @@ import com.devsoftw.aprendoconoli.Fragments.Tab2Fragment;
 import com.devsoftw.aprendoconoli.MainActivity;
 import com.devsoftw.aprendoconoli.Model.Select_Activity;
 import com.devsoftw.aprendoconoli.R;
+import com.devsoftw.aprendoconoli.View.Login_Colegio.Profesor.Profesor_Colegio;
+import com.devsoftw.aprendoconoli.View.Login_Colegio.Student.Login_Basic_Activity;
 import com.google.android.material.tabs.TabLayout;
 
 public class Cont_Alumno1_Activity extends AppCompatActivity {
@@ -212,4 +215,31 @@ public class Cont_Alumno1_Activity extends AppCompatActivity {
             }
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        // Eliminar la llamada a super.onBackPressed() para evitar el cierre inmediato de la app
+
+        // Crear y mostrar un AlertDialog
+
+        new AlertDialog.Builder(this)
+                .setTitle("Retroceder a Login Alumno")
+                .setMessage("¿Estás seguro de que quieres salir de la la Pantalla Actual?")
+                .setPositiveButton("Sí", (dialog, which) -> {
+                    // Si el usuario selecciona "Sí", redirigir a la actividad de login profesor
+                    Intent intent = new Intent(this, Select_Activity.class); // Reemplaza con tu actividad destino
+                    startActivity(intent);
+                    // Opcional: Si quieres que la actividad actual se cierre
+                    finish();
+                })
+                .setNegativeButton("No", (dialog, which) -> {
+                    // Si el usuario selecciona "No", no hacer nada y cerrar el diálogo
+                    dialog.dismiss();
+                })
+                .show();
+
+       // super.onBackPressed();
+    }
+
+
 }
