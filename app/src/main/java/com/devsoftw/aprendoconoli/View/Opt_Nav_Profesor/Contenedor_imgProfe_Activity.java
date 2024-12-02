@@ -1,4 +1,4 @@
-package com.devsoftw.aprendoconoli.View.Opt_Nav_Alumno;
+package com.devsoftw.aprendoconoli.View.Opt_Nav_Profesor;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -27,26 +27,26 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.devsoftw.aprendoconoli.Controller.Fragment_Alum1.CerrarSesion_Fragment;
-import com.devsoftw.aprendoconoli.Controller.Fragment_Alum1.Colegio_Fragment;
-import com.devsoftw.aprendoconoli.Controller.Fragment_Alum1.Cursos_Fragment;
-import com.devsoftw.aprendoconoli.Controller.Fragment_Alum1.Horario_Fragment;
-import com.devsoftw.aprendoconoli.Controller.Fragment_Alum1.Notioli_Fragment;
+import com.devsoftw.aprendoconoli.Controller.Fragment_Profe1.CerrarSesion_Prof_Fragment;
+import com.devsoftw.aprendoconoli.Controller.Fragment_Profe1.Colegio_Prof_Fragment;
+import com.devsoftw.aprendoconoli.Controller.Fragment_Profe1.Grados_Profe_Fragment;
+import com.devsoftw.aprendoconoli.Controller.Fragment_Profe1.Horario_Prof_Fragment;
+import com.devsoftw.aprendoconoli.Controller.Fragment_Profe1.Notioli_Prof_Fragment;
 import com.devsoftw.aprendoconoli.Model.Select_Activity;
 import com.devsoftw.aprendoconoli.R;
+import com.devsoftw.aprendoconoli.View.Opt_Nav_Alumno.Cont_Alumno1_Activity;
 import com.google.android.material.tabs.TabLayout;
 
-public class Cont_Alumno1_Activity extends AppCompatActivity {
-
+public class Contenedor_imgProfe_Activity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    Toolbar toolbar;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_cont_alumno1);
+        setContentView(R.layout.activity_contenedor_img_profe);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -61,24 +61,24 @@ public class Cont_Alumno1_Activity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         toolbar.setBackgroundColor(Color.parseColor("#FFFFFF")); //color general de app
-        getSupportActionBar().setTitle("Alumno Nicolas Suarez");
+        getSupportActionBar().setTitle("Profesor Pablo Bellido");
         toolbar.setTitleTextColor(Color.BLACK); // cambia el color del texto del título a negro
 
         /**
          *
          */
         // Habilitar la flecha de navegación (opcional)
-          //        ActionBar actionBar = getSupportActionBar();
-           //       if (actionBar != null) {
-           //           actionBar.setDisplayHomeAsUpEnabled(true);
-            //      }
+        //        ActionBar actionBar = getSupportActionBar();
+        //       if (actionBar != null) {
+        //           actionBar.setDisplayHomeAsUpEnabled(true);
+        //      }
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO: 11/10/2024  en el nav tab cuando estes ejemplo colegio la flecha del toolbar que retroceda a colegio y de cole a cursos y sucesivo
                 // Define aquí la actividad a la que quieres navegar
-                Intent intent = new Intent(Cont_Alumno1_Activity.this, Cont_Alumno1_Activity.class);
+                Intent intent = new Intent(Contenedor_imgProfe_Activity.this, Cont_Alumno1_Activity.class);
                 startActivity(intent);
                 // Si quieres que se cierre la actividad actual
                 finish();
@@ -89,7 +89,7 @@ public class Cont_Alumno1_Activity extends AppCompatActivity {
         ImageView imageView = new ImageView(this);
 
         // Obtener el bitmap de la imagen (usa una imagen de tu recurso drawable)
-        Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(R.drawable.niloalm)).getBitmap();
+        Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(R.drawable.proffff)).getBitmap();    // Imagen
 
         // Convertir la imagen en circular con borde
         Bitmap circularBitmapWithBorder = getCircularBitmapWithBorder(bitmap, 10, Color.WHITE); // Grosor del borde 10, color blanco
@@ -112,16 +112,29 @@ public class Cont_Alumno1_Activity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
 
-        // Configurar el ViewPager con el adapter
-        Cont_Alumno1_Activity.ViewPagerAdapter adapter = new Cont_Alumno1_Activity.ViewPagerAdapter(getSupportFragmentManager());
+        // Configurar ViewPager con el adaptador
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+
+        // Configurar iconos para las pestañas
+        int[] tabIcons = {
+                R.drawable.libro,       // Icono para la pestaña 0
+                R.drawable.iglesia,        // Icono para la pestaña 1
+                R.drawable.telefono,       // Icono para la pestaña 2
+                R.drawable.calendario,       // Icono para la pestaña 3
+                R.drawable.agregar       // Icono para la pestaña 4
+        };
+
+        // Asignar iconos a cada pestaña
+        for (int i = 0; i < tabIcons.length; i++) {
+            TabLayout.Tab tab = tabLayout.getTabAt(i);
+            if (tab != null) {
+                tab.setIcon(tabIcons[i]); // Asignar el icono correspondiente
+            }
+        }
     }
 
-    /**
-     * Codigo Toolbar con imagen
-     */
-// Método para hacer la imagen circular con borde
     private Bitmap getCircularBitmapWithBorder(Bitmap bitmap, int borderWidth, int borderColor) {
         int size = Math.min(bitmap.getWidth(), bitmap.getHeight());  // Tomamos el tamaño mínimo para hacerlo circular
         int borderSize = size + borderWidth * 2;  // El tamaño final incluye el borde
@@ -147,38 +160,28 @@ public class Cont_Alumno1_Activity extends AppCompatActivity {
 
         return output;
     }
-    /**
-     * Codigo Terminado de Toolbar
-     */
 
-
-
-    // Adapter para manejar los Fragments en el ViewPager
+    // Adaptador para manejar los Fragments en el ViewPager
     private class ViewPagerAdapter extends FragmentPagerAdapter {
 
         public ViewPagerAdapter(@NonNull FragmentManager fm) {
             super(fm);
         }
 
-        /**
-         * Modificar segun la nesecidad
-         * @param position
-         * @return
-         */
         @NonNull
         @Override
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new Notioli_Fragment();          // cambiar
+                    return new Notioli_Prof_Fragment();
                 case 1:
-                    return new Cursos_Fragment();
+                    return new Grados_Profe_Fragment();
                 case 2:
-                    return new Colegio_Fragment();
+                    return new Colegio_Prof_Fragment();
                 case 3:
-                    return new Horario_Fragment();
+                    return new Horario_Prof_Fragment();
                 case 4:
-                    return new CerrarSesion_Fragment();
+                    return new CerrarSesion_Prof_Fragment();
                 default:
                     return null;
             }
@@ -192,47 +195,22 @@ public class Cont_Alumno1_Activity extends AppCompatActivity {
         @Nullable
         @Override
         public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "NOTIOLI";
-                case 1:
-                    return "CURSOS";
-                case 2:
-                    return "COLEGIO";
-                case 3:
-                    return "HORARIO";
-                case 4:
-                    return "CERRAR SESION";
-                default:
-                    return null;
-            }
+            // No es necesario proporcionar texto porque usaremos solo iconos.
+            return null;
         }
     }
 
     @Override
     public void onBackPressed() {
-        // Eliminar la llamada a super.onBackPressed() para evitar el cierre inmediato de la app
-
-        // Crear y mostrar un AlertDialog
-
         new AlertDialog.Builder(this)
-                .setTitle("Retroceder a Login Alumno")
-                .setMessage("¿Estás seguro de que quieres salir de la la Pantalla Actual?")
+                .setTitle("Retroceder a Login Profesor")
+                .setMessage("¿Estás seguro de que quieres salir de la pantalla actual?")
                 .setPositiveButton("Sí", (dialog, which) -> {
-                    // Si el usuario selecciona "Sí", redirigir a la actividad de login profesor
-                    Intent intent = new Intent(this, Select_Activity.class); // Reemplaza con tu actividad destino
+                    Intent intent = new Intent(this, Select_Activity.class);
                     startActivity(intent);
-                    // Opcional: Si quieres que la actividad actual se cierre
                     finish();
                 })
-                .setNegativeButton("No", (dialog, which) -> {
-                    // Si el usuario selecciona "No", no hacer nada y cerrar el diálogo
-                    dialog.dismiss();
-                })
+                .setNegativeButton("No", (dialog, which) -> dialog.dismiss())
                 .show();
-
-       // super.onBackPressed();
     }
-
-
 }

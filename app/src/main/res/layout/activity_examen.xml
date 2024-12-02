@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Pregunta 1 -->
+        <TextView
+            android:id="@+id/question1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. ¿Cuál es la capital de Francia?"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/group1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/q1_option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Madrid" />
+            <RadioButton
+                android:id="@+id/q1_option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="París" />
+            <RadioButton
+                android:id="@+id/q1_option3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Roma" />
+        </RadioGroup>
+
+        <!-- Pregunta 2 -->
+        <TextView
+            android:id="@+id/question2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. ¿Cuál es el resultado de 5 + 3?"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp" />
+
+        <RadioGroup
+            android:id="@+id/group2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/q2_option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7" />
+            <RadioButton
+                android:id="@+id/q2_option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8" />
+            <RadioButton
+                android:id="@+id/q2_option3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9" />
+        </RadioGroup>
+
+        <!-- Repite este bloque para las 6 preguntas -->
+
+        <!-- Botón para enviar -->
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calificar"
+            android:layout_marginTop="24dp"
+
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</ScrollView>

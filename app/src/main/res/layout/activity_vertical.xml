@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="#882E2E"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".Pruebas.DIsenoVer.Vertical_Activity">
+
+    <!-- Menú de navegación vertical que se adapta al lado izquierdo y ocupa todo el alto -->
+    <LinearLayout
+        android:id="@+id/verticalTabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/border_background"
+        android:padding="0dp"
+        android:layout_gravity="start"
+        android:layout_margin="0dp"
+        android:backgroundTint="#174BCD"
+        android:elevation="4dp"
+        android:gravity="center_horizontal"> <!-- Centrado en el eje horizontal -->
+
+        <!-- Icono para la primera "pestaña" -->
+        <ImageButton
+            android:id="@+id/tab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="16dp"
+            android:contentDescription="Tab 1 Icon"/>
+
+        <!-- Icono para la segunda "pestaña" -->
+        <ImageButton
+            android:id="@+id/tab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="16dp"
+            android:contentDescription="Tab 2 Icon"/>
+
+        <!-- Icono para la tercera "pestaña" -->
+        <ImageButton
+            android:id="@+id/tab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="16dp"
+            android:contentDescription="Tab 3 Icon"/>
+    </LinearLayout>
+
+    <!-- Contenedor para el contenido asociado a cada "pestaña" -->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+</LinearLayout>

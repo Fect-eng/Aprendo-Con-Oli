@@ -2,7 +2,7 @@
 <resources>
 
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
-        <item name="colorAccent">@color/design_default_color_error</item>
+        <item name="colorAccent">?attr/colorOnErrorContainer</item>
         <item name="colorPrimary">@color/black</item>
     </style>
 

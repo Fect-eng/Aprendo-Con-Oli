@@ -14,8 +14,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.devsoftw.aprendoconoli.Model.Select_Activity;
-import com.devsoftw.aprendoconoli.View.Opt_Nav_Alumno.Cont_Alumno1_Activity;
+import com.devsoftw.aprendoconoli.Pruebas.PDF_Crud.ExportPDF_Activity;
+import com.devsoftw.aprendoconoli.View.Examen.Examen_Activity;
+import com.devsoftw.aprendoconoli.View.Login_Colegio.Profe_DB.LoginProfe_DB_Activity;
+import com.devsoftw.aprendoconoli.View.Login_Colegio.Profesor.Profesor_Colegio;
+import com.devsoftw.aprendoconoli.View.Login_Colegio.Student.Login_Basic_Activity;
 import com.devsoftw.aprendoconoli.View.Opt_Nav_Profesor.Contenedor_Profe1_Activity;
+import com.devsoftw.aprendoconoli.View.Opt_Nav_Profesor.Contenedor_imgProfe_Activity;
+import com.devsoftw.aprendoconoli.View.Registro.Registrar_Activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,9 +53,12 @@ public class MainActivity extends AppCompatActivity {
 
             public void onFinish() {
 
-                imageView.setVisibility(View.INVISIBLE); // Ocultar la imagen
-                txtAprendo.setVisibility(View.INVISIBLE);
-                Intent intent = new Intent(MainActivity.this, Select_Activity.class);
+                imageView.setVisibility(View.INVISIBLE); // Ocultar la imagen    Select_Activity    === Vertical_Activity
+                txtAprendo.setVisibility(View.INVISIBLE);    // PDF_Interaction_Activity      // Select_Activity
+                Intent intent = new Intent(MainActivity.this, Login_Basic_Activity.class);
+                //Select_Activity    --- Principal
+                //Contenedor_imgProfe_Activity
+                //Login_Basic_Activity
                 startActivity(intent);
                 finish();
                 // Finalizar el MainActivity para que no se pueda volver atrás, es para las opciones de flecha de 3 opciones

@@ -8,12 +8,12 @@
     android:layout_gravity="center_horizontal"
     android:layout_marginTop="22dp"
     android:background="#FFFFFF"
-    tools:context=".View.Login_Colegio.Student.Login_Basic_Activity">
+    tools:context=".Controller.Administrador.Admi_Login_Activity">
 
-        <include
-            android:id="@+id/include2"
-            layout="@layout/toolbar_nav"
-            />
+    <include
+        android:id="@+id/include2"
+        layout="@layout/toolbar_nav"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:src="@drawable/alumno" />
+            android:src="@drawable/androidsecur" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,61 +43,61 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="24dp"
-            android:text="Alumnoiiiio"
+            android:text="Administrador"
             android:textColor="#000000"
             android:textSize="24sp" />
 
-    <LinearLayout
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="-30dp"
-        android:layout_gravity="center_horizontal">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="330dp"
+        <LinearLayout
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:startIconDrawable="@drawable/baseline_verified_user_24"
-            android:background="@drawable/buttons_rounded_login"
-            android:layout_marginTop="32dp"
-            android:layout_gravity="center"
-            android:hint="Usuario"
-            >
+            android:orientation="vertical"
+            android:layout_marginTop="-30dp"
+            android:layout_gravity="center_horizontal">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtUsuario"
-                android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="330dp"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="#000000" />
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconDrawable="@drawable/baseline_verified_user_24"
+                android:background="@drawable/administrator_edittext"
+                android:layout_marginTop="32dp"
+                android:layout_gravity="center"
+                android:hint="Usuario"
+                >
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_AdminUsr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="#FFFFFF" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="330dp"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:startIconDrawable="@drawable/baseline_password_24"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/buttons_rounded_login"
-            android:layout_gravity="center"
-            android:hint="Contraseña"
-            >
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtPassword"
-                android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="330dp"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="#000000" />
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconDrawable="@drawable/baseline_password_24"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/administrator_edittext"
+                android:layout_gravity="center"
+                android:hint="Contraseña"
+                >
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_admin_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="#FFFFFF" />
 
-    </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
 
         <Button
-            android:id="@+id/buttonLogin"
+            android:id="@+id/BTN_IniciarSesion"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -115,14 +115,6 @@
             android:layout_marginTop="16dp"
             android:textColor="@android:color/holo_red_dark"
             android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/IMG_Clear"
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/limpiezatext" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

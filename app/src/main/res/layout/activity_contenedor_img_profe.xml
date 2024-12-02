@@ -7,7 +7,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Pruebas.Fragments.Nav_Activity">
+    tools:context=".View.Opt_Nav_Profesor.Contenedor_imgProfe_Activity">
+    <include
+        android:id="@+id/include2"
+        layout="@layout/toolbar_nav"/>
 
     <!-- TabLayout para los botones de navegación -->
     <com.google.android.material.tabs.TabLayout
@@ -16,7 +19,8 @@
         android:layout_height="wrap_content"
         app:tabMode="fixed"
         app:tabGravity="fill"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="10dp"
+        android:background="#174BCD"/>
 
     <!-- ViewPager para manejar los Fragments -->
     <androidx.viewpager.widget.ViewPager

@@ -2,22 +2,77 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.APRENDOCONOLI"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".View.Opt_Nav_Profesor.Contenedor_Profe1_Activity"
+            android:name=".View.Registro.RegistrarProfe_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Controller.Administrador.VerData_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Controller.Administrador.Eliminar_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Controller.Administrador.Modificar_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Controller.Administrador.Agregar_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".View.Examen.Examen_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Controller.Administrador.Admi_Login_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".View.Opt_Nav_Profesor.Contenedor_imgProfe_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".View.Login_Colegio.Profe_DB.LoginProfe_DB_Activity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
             android:exported="false"
-            android:launchMode="singleTask"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".Pruebas.PDF_Crud.ExportPDF_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".View.Registro.Registrar_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Pruebas.DIsenoVer.Vertical_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".View.Opt_Nav_Profesor.Contenedor_Profe1_Activity"
             android:alwaysRetainTaskState="true"
-            />
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".View.Login_Colegio.Student.Login_Basic_Activity"
             android:exported="false" />
@@ -25,7 +80,7 @@
             android:name=".View.Opt_Nav_Alumno.Cont_Alumno1_Activity"
             android:exported="false" />
         <activity
-            android:name=".Fragments.Nav_Activity"
+            android:name=".Pruebas.Fragments.Nav_Activity"
             android:exported="false" />
         <activity
             android:name=".Pruebas.NavTab_Activity"

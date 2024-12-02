@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:gravity="center"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Fragments.Tab1Fragment">
+    tools:context=".Pruebas.Fragments.Tab1Fragment">
 
     <Button
         android:id="@+id/button_tab1"

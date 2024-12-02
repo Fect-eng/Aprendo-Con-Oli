@@ -1,4 +1,4 @@
-package com.devsoftw.aprendoconoli.Fragments;
+package com.devsoftw.aprendoconoli.Pruebas.Fragments;
 
 import android.os.Bundle;
 
@@ -14,9 +14,10 @@ import android.widget.Toast;
 
 import com.devsoftw.aprendoconoli.R;
 
-public class Tab2Fragment extends Fragment {
 
-    public Tab2Fragment() {
+public class Tab1Fragment extends Fragment {
+
+    public Tab1Fragment() {
         // Requiere un constructor vacío
     }
 
@@ -24,10 +25,10 @@ public class Tab2Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflar el diseño para este fragmento
-        View view = inflater.inflate(R.layout.fragment_tab2, container, false);
+        View view = inflater.inflate(R.layout.fragment_tab1, container, false);
 
-        Button button = view.findViewById(R.id.button_tab2);
-        button.setOnClickListener(v -> Toast.makeText(getActivity(), "Tab 2 ejecutado", Toast.LENGTH_SHORT).show());
+        Button button = view.findViewById(R.id.button_tab1);
+        button.setOnClickListener(v -> Toast.makeText(getActivity(), "Tab 1 ejecutado", Toast.LENGTH_SHORT).show());
 
         return view;
     }

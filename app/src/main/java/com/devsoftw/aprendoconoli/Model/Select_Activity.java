@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.devsoftw.aprendoconoli.MainActivity;
+import com.devsoftw.aprendoconoli.View.Login_Colegio.Profe_DB.LoginProfe_DB_Activity;
 import com.devsoftw.aprendoconoli.View.Login_Colegio.Student.Login_Basic_Activity;
 import com.devsoftw.aprendoconoli.R;
 import com.devsoftw.aprendoconoli.View.Login_Colegio.Profesor.Profesor_Colegio;
@@ -77,14 +78,14 @@ public class Select_Activity extends AppCompatActivity {
      */
 
     private void ImageviewLog_Profesor_Metodo() {
-        Intent intent = new Intent(Select_Activity.this, Profesor_Colegio.class);
+        Intent intent = new Intent(Select_Activity.this, LoginProfe_DB_Activity.class);
         Toast.makeText(this, "Bienvenido Profesor", Toast.LENGTH_SHORT).show();
         startActivity(intent);
         finish();
     }
 
     private void Btn_Profesor_Metodo() {
-        Intent intent = new Intent(Select_Activity.this, Profesor_Colegio.class);
+        Intent intent = new Intent(Select_Activity.this, LoginProfe_DB_Activity.class);
         Toast.makeText(this, "Bienvenido Profesor", Toast.LENGTH_SHORT).show();
         startActivity(intent);
         finish();
@@ -104,16 +105,14 @@ public class Select_Activity extends AppCompatActivity {
         finish();
     }
 
-    /**
-     *  @Override
-     *     public void onBackPressed() {
-     *         // Crear un Intent para redirigir a una actividad predeterminada
-     *         super.onBackPressed();
-     *         Intent intent = new Intent(this, MainActivity.class); // Reemplaza con tu actividad destino
-     *         startActivity(intent);
-     *
-     *         // Opcional: Cierra la actividad actual
-     *         finish();
-     *     }
-     */
+
+          public void onBackPressed() {
+              // Crear un Intent para redirigir a una actividad predeterminada
+              super.onBackPressed();
+              Intent intent = new Intent(this, MainActivity.class); // Reemplaza con tu actividad destino
+              startActivity(intent);
+              // Opcional: Cierra la actividad actual
+              finish();
+          }
+
 }

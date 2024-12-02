@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/itemConsulta"
+        android:title="Consultar Casos">
+    </item>
+
+    <item android:id="@+id/item_Limpiar"
+        android:title="Limpiar">
+    </item>
+
+    <item android:id="@+id/Utilidad2"
+        android:title="Call Center"
+        app:showAsAction="never">
+        <menu>
+            <item android:id="@+id/item1"
+                android:title="item1">
+            </item>
+            <item android:id="@+id/item2"
+                android:title="item2">
+            </item>
+            <item android:id="@+id/item3"
+                android:title="item3">
+            </item>
+        </menu>
+
+    </item>
+</menu>

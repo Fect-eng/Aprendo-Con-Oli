@@ -1,16 +1,13 @@
-package com.devsoftw.aprendoconoli.View.Login_Colegio.Student;
+package com.devsoftw.aprendoconoli.View.Login_Colegio.Profe_DB;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -18,8 +15,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -30,33 +29,42 @@ import com.devsoftw.aprendoconoli.Controller.Administrador.Admi_Login_Activity;
 import com.devsoftw.aprendoconoli.MainActivity;
 import com.devsoftw.aprendoconoli.Model.Select_Activity;
 import com.devsoftw.aprendoconoli.R;
+import com.devsoftw.aprendoconoli.View.Login_Colegio.Student.Login_Basic_Activity;
 import com.devsoftw.aprendoconoli.View.Opt_Nav_Alumno.Cont_Alumno1_Activity;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-
-public class Login_Basic_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class LoginProfe_DB_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private Button buttonLogin;
-    private TextInputEditText edtUsuario;
-    private TextInputEditText edtPassword;
+    private EditText edtUsuario;
+    private EditText edtPassword;
     String nombre, cn_pass;
-    ImageView IMG_Clear;
 
-    Toolbar toolbar;
+    /**
+     * Credenciales de Base datos Online Neubox
+     * $server = "localhost";
+     * $username = "devcraft_usr_oliverapp";
+     * $password = "11!ZElAQ9^+}2To";
+     * $database = "devcraft_db_oliverapp";
+     * @param savedInstanceState
+     * Endpoint de Conexion a la DB
+     * https://devcraftinglab.com/aprendocon_oli/cnn.php
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_login_basic);
+        setContentView(R.layout.activity_login_profe_db);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         /**
          * Barra Navegacion Inicial
@@ -65,13 +73,11 @@ public class Login_Basic_Activity extends AppCompatActivity implements Navigatio
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        toolbar.setBackgroundColor(Color.parseColor("#f52c29")); // Color general de la app
+        toolbar.setBackgroundColor(Color.parseColor("#4146f7")); //color general de app
         toolbar.setTitleTextColor(Color.WHITE); // Cambiar el color del texto del título a blanco
-        getSupportActionBar().setTitle("Login Alumno Oliveros");
+        getSupportActionBar().setTitle("Login Profesor");
 
-
-
-        // Habilitar la flecha de navegación (opcional)
+           // Habilitar la flecha de navegación (opcional)
                   ActionBar actionBar = getSupportActionBar();
                   if (actionBar != null) {
                       actionBar.setDisplayHomeAsUpEnabled(true);
@@ -81,7 +87,7 @@ public class Login_Basic_Activity extends AppCompatActivity implements Navigatio
             @Override
             public void onClick(View v) {
                 // Define aquí la actividad a la que quieres navegar
-                Intent intent = new Intent(Login_Basic_Activity.this, Select_Activity.class);
+                Intent intent = new Intent(LoginProfe_DB_Activity.this, Select_Activity.class);
                 startActivity(intent);
                 // Si quieres que se cierre la actividad actual
                 finish();
@@ -99,28 +105,16 @@ public class Login_Basic_Activity extends AppCompatActivity implements Navigatio
                 cn_pass = edtPassword.getText().toString();
 
                 if (!nombre.isEmpty() && !cn_pass.isEmpty()) {
+                    //local    validarUsuario("http://192.168.157.211/API_OliverosApp/validar_user.php");
                     validarUsuario("http://192.168.0.10/API_OliverosApp/login.php");
-                    //validarUsuario("https://devcraftinglab.com/aprendocon_oli/validar_user.php");
+
+                    //validarUsuario("https://devcraftinglab.com/aprendocon_oli/validar_profe.php");
 
                 } else {
-                    Toast.makeText(Login_Basic_Activity.this, "No se permiten espacios vacíos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginProfe_DB_Activity.this, "No se permiten espacios vacíos", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-        IMG_Clear = findViewById(R.id.IMG_Clear);
-        IMG_Clear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                metodo_limpieza();
-            }
-        });
-    }
-
-    private void metodo_limpieza() {
-        edtUsuario.setText("");
-        edtPassword.setText("");
-        Toast.makeText(this, "Limpieza Realizada", Toast.LENGTH_SHORT).show();
     }
 
     private void validarUsuario(String URL) {
@@ -140,10 +134,10 @@ public class Login_Basic_Activity extends AppCompatActivity implements Navigatio
                                 Intent intent = new Intent(getApplicationContext(), Cont_Alumno1_Activity.class);
                                 startActivity(intent);
                             } else {
-                                Toast.makeText(Login_Basic_Activity.this, message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginProfe_DB_Activity.this, message, Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
-                            Toast.makeText(Login_Basic_Activity.this, "Error al interpretar la respuesta del servidor", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginProfe_DB_Activity.this, "Error al interpretar la respuesta del servidor", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         }
                     }
@@ -151,9 +145,7 @@ public class Login_Basic_Activity extends AppCompatActivity implements Navigatio
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e("VolleyError", "Error de conexiónn: " + error.toString());
-                      //  Toast.makeText(Login_Basic_Activity.this, "Error de conexión: " + error.toString(), Toast.LENGTH_SHORT).show();
-                        Toast.makeText(Login_Basic_Activity.this, "Error de conexión: " + error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginProfe_DB_Activity.this, "Error de conexión: " + error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -170,13 +162,6 @@ public class Login_Basic_Activity extends AppCompatActivity implements Navigatio
         finish();
     }
 
-    // TODO: 29/11/2024  /**
-
-    /**
-     *
-     * @param menu
-     * @return
-     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.popup_menu, menu);
