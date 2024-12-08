@@ -177,8 +177,10 @@ public class Contenedor_imgProfe_Activity extends AppCompatActivity {
                 case 1:
                     return new Grados_Profe_Fragment();
                 case 2:
+                    // Atencion al Alumno ↓    terminado
                     return new Colegio_Prof_Fragment();
                 case 3:
+                    // realizando
                     return new Horario_Prof_Fragment();
                 case 4:
                     return new CerrarSesion_Prof_Fragment();

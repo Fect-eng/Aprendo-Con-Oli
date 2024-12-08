@@ -106,7 +106,7 @@ public class LoginProfe_DB_Activity extends AppCompatActivity implements Navigat
 
                 if (!nombre.isEmpty() && !cn_pass.isEmpty()) {
                     //local    validarUsuario("http://192.168.157.211/API_OliverosApp/validar_user.php");
-                    validarUsuario("http://192.168.0.10/API_OliverosApp/login.php");
+                    validarUsuario("http://192.168.199.119/API_OliverosApp/login.php");
 
                     //validarUsuario("https://devcraftinglab.com/aprendocon_oli/validar_profe.php");
 

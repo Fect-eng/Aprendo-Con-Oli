@@ -99,7 +99,7 @@ public class Login_Basic_Activity extends AppCompatActivity implements Navigatio
                 cn_pass = edtPassword.getText().toString();
 
                 if (!nombre.isEmpty() && !cn_pass.isEmpty()) {
-                    validarUsuario("http://192.168.0.10/API_OliverosApp/login.php");
+                    validarUsuario("http://192.168.199.119/API_OliverosApp/login.php");
                     //validarUsuario("https://devcraftinglab.com/aprendocon_oli/validar_user.php");
 
                 } else {

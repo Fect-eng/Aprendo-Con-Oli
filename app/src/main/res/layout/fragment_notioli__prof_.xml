@@ -10,19 +10,61 @@
     tools:context=".Controller.Fragment_Profe1.Notioli_Prof_Fragment">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="30dp"
         android:gravity="center">
 
-        <ImageView
-            android:id="@+id/image_tab1"
-            android:layout_width="350dp"
+        <!-- Primer TextView -->
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/noticiaspro"
-            android:contentDescription="Descripción de la imagen" />
+            android:text="NOTICIAS OLI"
+            android:textSize="22sp"
+            android:textColor="#06477A"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Segundo TextView -->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estudiante de Saco Oliveros de tan solo 7 años, logra tres medallas de oro en Panamericano de Ajedrez en Paraguay"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="#CA0606"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Primer ImageView -->
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/oli1"
+            android:contentDescription="Imagen 1"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Tercer TextView -->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oliverino obtiene medalla de oro con puntaje perfecto en la Olimpiada Iberoamericana de Matemática"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="#CA0606"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Segundo ImageView -->
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/oli2"
+            android:contentDescription="Imagen 2" />
 
     </LinearLayout>
 </LinearLayout>

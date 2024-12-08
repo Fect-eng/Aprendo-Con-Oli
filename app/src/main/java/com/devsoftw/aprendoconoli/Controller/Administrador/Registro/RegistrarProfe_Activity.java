@@ -1,4 +1,4 @@
-package com.devsoftw.aprendoconoli.View.Registro;
+package com.devsoftw.aprendoconoli.Controller.Administrador.Registro;
 
 import android.os.Bundle;
 

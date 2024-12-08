@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +23,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".View.Registro.RegistrarProfe_Activity"
+            android:name=".Controller.Administrador.Registro.RegistrarProfe_Activity"
             android:exported="false" />
         <activity
             android:name=".Controller.Administrador.VerData_Activity"
@@ -63,7 +64,7 @@
             android:name=".Pruebas.PDF_Crud.ExportPDF_Activity"
             android:exported="false" />
         <activity
-            android:name=".View.Registro.Registrar_Activity"
+            android:name=".Controller.Administrador.Registro.Registrar_Activity"
             android:exported="false" />
         <activity
             android:name=".Pruebas.DIsenoVer.Vertical_Activity"
