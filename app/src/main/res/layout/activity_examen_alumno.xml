@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Model.Examen_Virtual.Examen_Alumno_Activity">
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Pregunta 1 -->
+            <TextView
+                android:id="@+id/question_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. ¿Cuál es la capital de Francia?"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/radio_1_A" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="París" />
+                <RadioButton android:id="@+id/radio_1_B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Londres" />
+                <RadioButton android:id="@+id/radio_1_C" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Roma" />
+                <RadioButton android:id="@+id/radio_1_D" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Madrid" />
+            </RadioGroup>
+
+            <!-- Pregunta 2 -->
+            <TextView
+                android:id="@+id/question_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. ¿Cuál es el planeta más grande del sistema solar?"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/radio_2_A" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Marte" />
+                <RadioButton android:id="@+id/radio_2_B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tierra" />
+                <RadioButton android:id="@+id/radio_2_C" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Júpiter" />
+                <RadioButton android:id="@+id/radio_2_D" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Venus" />
+            </RadioGroup>
+
+            <!-- Pregunta 3 -->
+            <TextView
+                android:id="@+id/question_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. ¿Cuántos continentes hay en el mundo?"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/radio_3_A" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5" />
+                <RadioButton android:id="@+id/radio_3_B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="6" />
+                <RadioButton android:id="@+id/radio_3_C" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="7" />
+                <RadioButton android:id="@+id/radio_3_D" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="8" />
+            </RadioGroup>
+
+            <!-- Pregunta 4 -->
+            <TextView
+                android:id="@+id/question_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. ¿Quién escribió 'Cien años de soledad'?"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/radio_4_A" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gabriel García Márquez" />
+                <RadioButton android:id="@+id/radio_4_B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mario Vargas Llosa" />
+                <RadioButton android:id="@+id/radio_4_C" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Jorge Luis Borges" />
+                <RadioButton android:id="@+id/radio_4_D" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pablo Neruda" />
+            </RadioGroup>
+
+            <!-- Pregunta 5 -->
+            <TextView
+                android:id="@+id/question_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5. ¿En qué año llegó el hombre a la luna?"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/radio_5_A" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1965" />
+                <RadioButton android:id="@+id/radio_5_B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1969" />
+                <RadioButton android:id="@+id/radio_5_C" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1971" />
+                <RadioButton android:id="@+id/radio_5_D" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1980" />
+            </RadioGroup>
+
+            <!-- Pregunta 6 -->
+            <TextView
+                android:id="@+id/question_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6. ¿Cuál es la fórmula química del agua?"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/radio_6_A" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="H2O" />
+                <RadioButton android:id="@+id/radio_6_B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="O2" />
+                <RadioButton android:id="@+id/radio_6_C" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CO2" />
+                <RadioButton android:id="@+id/radio_6_D" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NaCl" />
+            </RadioGroup>
+
+            <!-- Botón para enviar el examen -->
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enviar Examen"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/txtCalificacionFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:text="Tu calificación aparecerá aquí"
+                android:visibility="visible" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

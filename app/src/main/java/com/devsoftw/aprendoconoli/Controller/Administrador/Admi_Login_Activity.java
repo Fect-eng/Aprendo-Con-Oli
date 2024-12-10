@@ -18,6 +18,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.devsoftw.aprendoconoli.Controller.Administrador.Registro.Seleccion_Admi_Activity;
 import com.devsoftw.aprendoconoli.Model.Select_Activity;
 import com.devsoftw.aprendoconoli.R;
 import com.devsoftw.aprendoconoli.View.Login_Colegio.Profe_DB.LoginProfe_DB_Activity;
@@ -80,6 +81,19 @@ public class Admi_Login_Activity extends AppCompatActivity implements Navigation
     }
 
     private void Metodo_IniciarSesion() {
+        // Obtener los valores ingresados
+        String username = edt_AdminUsr.getText().toString();
+        String password = edt_admin_password.getText().toString();
+
+        // Validar credenciales
+        if (username.equals("123") && password.equals("123")) {
+            Toast.makeText(Admi_Login_Activity.this, "¡Login exitoso!", Toast.LENGTH_SHORT).show();
+            // Aquí puedes redirigir a otra actividad si lo deseas
+             Intent intent = new Intent(Admi_Login_Activity.this, Seleccion_Admi_Activity.class);
+             startActivity(intent);
+        } else {
+            Toast.makeText(Admi_Login_Activity.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+        }
 
     }
 

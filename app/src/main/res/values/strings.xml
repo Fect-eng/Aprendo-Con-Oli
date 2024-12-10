@@ -2,4 +2,20 @@
     <string name="app_name">APRENDO CON OLI</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="spinner_prompt">Seleccione un número</string>
+    <string-array name="numbers_array">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string name="spinner_prompt_Grado">Seleccione un número</string>
+    <string-array name="numbers_array_grado">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
 </resources>

@@ -23,6 +23,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Model.Examen_Virtual.Examen_Alumno_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Controller.Administrador.Registro.Seleccion_Admi_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Controller.Administrador.Registro.RegistrarProfe_Activity"
             android:exported="false" />
         <activity

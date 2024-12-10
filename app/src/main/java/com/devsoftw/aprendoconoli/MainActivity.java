@@ -13,6 +13,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.devsoftw.aprendoconoli.Controller.Administrador.Admi_Login_Activity;
+import com.devsoftw.aprendoconoli.Controller.Administrador.Registro.Registrar_Activity;
+import com.devsoftw.aprendoconoli.Model.Examen_Virtual.Examen_Alumno_Activity;
+import com.devsoftw.aprendoconoli.Model.Select_Activity;
 import com.devsoftw.aprendoconoli.View.Opt_Nav_Profesor.Contenedor_imgProfe_Activity;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
                 imageView.setVisibility(View.INVISIBLE); // Ocultar la imagen    Select_Activity    === Vertical_Activity
                 txtAprendo.setVisibility(View.INVISIBLE);    // PDF_Interaction_Activity      // Select_Activity
-                Intent intent = new Intent(MainActivity.this, Contenedor_imgProfe_Activity.class);
+                Intent intent = new Intent(MainActivity.this, Examen_Alumno_Activity.class);
                 //Select_Activity    --- Principal
                 //Contenedor_imgProfe_Activity
                 //Login_Basic_Activity
